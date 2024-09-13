@@ -40,3 +40,13 @@ FROM
     products
 WHERE 
     price BETWEEN 50 AND 300;
+
+-- 6. AND / OR (multiple conditions)
+SELECT 
+    product_name, 
+    price 
+FROM 
+    products
+WHERE 
+    category = 'Electronics' 
+    AND (price > 100 OR brand = 'BrandX');
