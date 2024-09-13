@@ -31,3 +31,12 @@ FROM
     products
 WHERE 
     product_name LIKE 'Phone%';
+
+-- 5. BETWEEN (range filtering)
+SELECT 
+    product_name, 
+    price 
+FROM 
+    products
+WHERE 
+    price BETWEEN 50 AND 300;
