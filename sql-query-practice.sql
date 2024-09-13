@@ -50,3 +50,12 @@ FROM
 WHERE 
     category = 'Electronics' 
     AND (price > 100 OR brand = 'BrandX');
+
+-- 7. ORDER BY (sorting results)
+SELECT 
+    product_name, 
+    price 
+FROM 
+    products
+ORDER BY 
+    price DESC;
