@@ -22,3 +22,12 @@ FROM
     products
 WHERE 
     price > 100 AND category = 'Electronics';
+
+-- 4. LIKE (pattern matching)
+SELECT 
+    product_name, 
+    price 
+FROM 
+    products
+WHERE 
+    product_name LIKE 'Phone%';
