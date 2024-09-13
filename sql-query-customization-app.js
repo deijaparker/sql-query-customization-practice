@@ -110,3 +110,19 @@ client.query(
     }
   }
 );
+
+// 7. ORDER BY (sorting results)
+client.query(
+  `
+    SELECT product_name, price 
+    FROM products
+    ORDER BY price DESC;
+  `,
+  (err, res) => {
+    if (err) {
+      console.error("Error executing ORDER BY query:", err);
+    } else {
+      console.log("Results sorted by price (descending):", res.rows);
+    }
+  }
+);
