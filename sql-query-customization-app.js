@@ -126,3 +126,20 @@ client.query(
     }
   }
 );
+
+// 8. LIMIT (restricting the number of rows returned)
+client.query(
+  `
+    SELECT product_name, price 
+    FROM products
+    ORDER BY price DESC
+    LIMIT 5;
+  `,
+  (err, res) => {
+    if (err) {
+      console.error("Error executing LIMIT query:", err);
+    } else {
+      console.log("Top 5 most expensive products:", res.rows);
+    }
+  }
+);
