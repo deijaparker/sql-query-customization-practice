@@ -69,3 +69,15 @@ FROM
 ORDER BY 
     price DESC
 LIMIT 5;
+
+-- 9. CASE (conditional logic)
+SELECT 
+    product_name, 
+    price, 
+    CASE 
+        WHEN price > 500 THEN 'Premium'
+        WHEN price BETWEEN 100 AND 500 THEN 'Mid-Range'
+        ELSE 'Budget'
+    END AS "Price Category"
+FROM 
+    products;
