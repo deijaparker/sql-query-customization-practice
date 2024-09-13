@@ -93,3 +93,20 @@ client.query(
     }
   }
 );
+
+// 6. AND / OR (multiple conditions)
+client.query(
+  `
+    SELECT product_name, price 
+    FROM products
+    WHERE category = 'Electronics' 
+      AND (price > 100 OR brand = 'BrandX');
+  `,
+  (err, res) => {
+    if (err) {
+      console.error("Error executing AND/OR query:", err);
+    } else {
+      console.log("Results from AND/OR conditions:", res.rows);
+    }
+  }
+);
