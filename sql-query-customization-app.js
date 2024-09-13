@@ -45,3 +45,19 @@ client.query(
     }
   }
 );
+
+// 3. WHERE with conditions
+client.query(
+  `
+    SELECT product_name, price 
+    FROM products
+    WHERE price > 100 AND category = 'Electronics';
+  `,
+  (err, res) => {
+    if (err) {
+      console.error("Error executing WHERE query:", err);
+    } else {
+      console.log("Filtered results based on conditions:", res.rows);
+    }
+  }
+);
