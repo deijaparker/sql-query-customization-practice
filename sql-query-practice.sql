@@ -59,3 +59,13 @@ FROM
     products
 ORDER BY 
     price DESC;
+
+-- 8. LIMIT (restricting the number of rows returned)
+SELECT 
+    product_name, 
+    price 
+FROM 
+    products
+ORDER BY 
+    price DESC
+LIMIT 5;
