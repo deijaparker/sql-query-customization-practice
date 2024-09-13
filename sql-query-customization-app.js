@@ -77,3 +77,19 @@ client.query(
     }
   }
 );
+
+// 5. BETWEEN (range filtering)
+client.query(
+  `
+    SELECT product_name, price 
+    FROM products
+    WHERE price BETWEEN 50 AND 300;
+  `,
+  (err, res) => {
+    if (err) {
+      console.error("Error executing BETWEEN query:", err);
+    } else {
+      console.log("Results filtered by price range:", res.rows);
+    }
+  }
+);
