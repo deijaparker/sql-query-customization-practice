@@ -13,3 +13,12 @@ SELECT
     DISTINCT category 
 FROM 
     products;
+
+-- 3. WHERE with conditions
+SELECT 
+    product_name, 
+    price 
+FROM 
+    products
+WHERE 
+    price > 100 AND category = 'Electronics';
