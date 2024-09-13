@@ -143,3 +143,28 @@ client.query(
     }
   }
 );
+
+// 9. CASE (conditional logic)
+client.query(
+  `
+    SELECT 
+      product_name, 
+      price, 
+      CASE 
+        WHEN price > 500 THEN 'Premium'
+        WHEN price BETWEEN 100 AND 500 THEN 'Mid-Range'
+        ELSE 'Budget'
+      END AS "Price Category"
+    FROM products;
+  `,
+  (err, res) => {
+    if (err) {
+      console.error("Error executing CASE query:", err);
+    } else {
+      console.log("Products categorized by price range:", res.rows);
+    }
+  }
+);
+
+// Close the database connection once queries are done
+client.end();
