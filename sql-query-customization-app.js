@@ -31,3 +31,17 @@ client.query(
     }
   }
 );
+
+// 2. DISTINCT (unique values)
+client.query(
+  `
+    SELECT DISTINCT category FROM products;
+  `,
+  (err, res) => {
+    if (err) {
+      console.error("Error executing DISTINCT query:", err);
+    } else {
+      console.log("Unique categories:", res.rows);
+    }
+  }
+);
