@@ -61,3 +61,19 @@ client.query(
     }
   }
 );
+
+// 4. LIKE (pattern matching)
+client.query(
+  `
+    SELECT product_name, price 
+    FROM products
+    WHERE product_name LIKE 'Phone%';
+  `,
+  (err, res) => {
+    if (err) {
+      console.error("Error executing LIKE query:", err);
+    } else {
+      console.log("Results from LIKE pattern matching:", res.rows);
+    }
+  }
+);
