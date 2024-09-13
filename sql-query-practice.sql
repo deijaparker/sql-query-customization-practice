@@ -7,3 +7,9 @@ SELECT
     price AS "Price"
 FROM 
     products;
+
+-- 2. DISTINCT (unique values)
+SELECT 
+    DISTINCT category 
+FROM 
+    products;
